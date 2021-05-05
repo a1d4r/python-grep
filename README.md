@@ -1,9 +1,12 @@
-# Аналог утилиты `grep`
+# grep command-line utility
 
-## Описание
+## Description
 
-Аналог утилиты `grep`, которая выполняет поиск указанной подстроки во всеx файлах указанной директории и всех её поддиректорий.
+Analogue of grep command-line utility in Python. It searches files in a 
+specified directory for lines containing a specified substring.
 
+
+### CLI description
 ```
 usage: mygrep [-h] path substring
 
@@ -18,48 +21,45 @@ optional arguments:
 
 ```
 
-### Примеры вызова
+## Usage
 
-Пусть в текущей директории есть два файла:
-`>> cat f1.py`
+Assume there are 2 files in the working directory:
+
+`$ cat f1.py`
 
 ```python
 print("Hello, world!")
 ```
 
-`>> cat f2.txt`
+`$ cat f2.txt`
 
 ```
 hello
 world
 ```
 
-Вызов: `mygrep . "Hello"`
-
-Результат:
+`$ mygrep . "Hello"`
 
 ```
 f1.py line=1: print("Hello, world!")
 ```
 
-Вызов: `mygrep . world`
-
-Результат:
+`$ mygrep . world`
 
 ```
 f1.py line=1: print("Hello, world!")
 f2.txt line=2: world
 ```
 
-### Установка виртуального окружения
+### Create virtual environment
 ```
 make venv
 ```
-### Установка утилиты
+### Install utility
 ```
 python setup.py install
 ```
-### Запуск тестов
+### Run tests
 ```
 make test
 ```
